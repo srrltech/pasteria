@@ -1,0 +1,50 @@
+Deadcode Analysis Findings:
+===========================
+
+1. Dead assignments to `nil`:
+The obfuscator frequently leaves behind code like:
+```lua
+global_events_table = nil;
+global_events_table = print;
+```
+Or
+```lua
+local db_key = nil;
+...
+db_key = PROJECT_NAME .. "::db";
+```
+These are completely redundant re-assignments to `nil` immediately preceding a real assignment, which do nothing but clutter the code. They are safe to remove.
+
+2. Throwaway local variables:
+There are several instances of `local _ = <expr>;`.
+In Lua, an assignment to `_` is sometimes used to suppress unused variable warnings or discard multiple return values. However, assignments like:
+```lua
+local _ = pairs;
+local _ = getmetatable;
+local _ = globals.realtime;
+```
+are pure deadcode because they merely retrieve a global or table property without invoking any side-effects, and store it in a throwaway variable.
+However, assignments like:
+```lua
+local _ = v1659:get_origin()
+```
+could theoretically have side-effects if `get_origin()` mutates state. To be safe, we will ONLY remove throwaway assignments of basic standard library functions/globals, or empty strings. We will NOT remove method calls assigned to `_`.
+
+3. Empty functions:
+There are a few empty functions:
+```lua
+function ()
+end
+
+function (_, _, _)
+end
+```
+These are likely default callbacks/handlers and might be passed as arguments where a function is expected. They are NOT deadcode, they are "no-op" implementations required by the API.
+
+4. Unfinished features:
+No explicit "TODO" or "FIXME" comments were found. The script appears to be a finalized (but obfuscated) script.
+
+Decision:
+We will strip:
+1. Lines that are `variable = nil;` where `variable` is reassigned in the very next non-empty line.
+2. Lines that are `local _ = <global or literal>;` where it is clearly a side-effect-free expression.

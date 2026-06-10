@@ -1,0 +1,317 @@
+Variables/Functions Descriptions:
+=================================
+event_handler_meta -> db_manager: Meta table or event handler manager
+event_metatable_or_db_key -> db_key: Database key or metatable for events
+db_version_or_ffi_type_or_scaled_screen_size -> screen_size: Screen size vector
+db_data_or_vfunc_or_scaled_screen_center -> screen_center: Screen center vector
+native_screen_size_or_vfunc -> native_screen_size: Native screen size (from VGUI)
+native_screen_center_or_vfunc -> native_screen_center: Native screen center (from VGUI)
+font_definitions_or_render_base_or_animation_manager -> anim_manager: Animation manager / easings
+font_map_or_animation_cache_or_drag_handler -> drag_handler: Drag handler for UI elements
+dpi_scale_or_widget_factory_or_frametime -> widget_factory: Widget factory for custom UI
+dpi_suffix_or_image_assets_or_time_multiplier -> image_assets: Image assets cache
+easing_functions_or_asset_definitions_or_aa_states -> aa_states: Anti-aim states / easing functions
+drag_ui_group_or_game_data_or_steam_vfunc -> game_data: Game data (hitgroups, states) / Steam vfunc
+steam_friends_or_config_builder -> config_builder: Config builder / steam friends
+local_player_state -> local_player: Local player state wrapper
+all_players_list -> players: List of all players
+keybinds_list -> keybinds: List of keybinds
+active_keybinds -> active_binds: Currently active keybinds
+game_state_wrapper_or_build_info -> build_info: Build info (username, version, build)
+update_game_state_func_or_ui_helpers_or_build_types -> ui_helpers: UI helpers (selectors, anims) / Build types
+auth_db_key_or_ui_groups -> ui_groups: UI groups (settings, home)
+auth_event_name_or_ui_elements_or_ui_animated_elements_manager -> ui_elements: UI elements
+auth_format_string_or_ui_tabs_or_pending_animated_elements -> ui_tabs: UI tabs
+is_authorized_user_or_config_manager_or_active_animated_elements -> ui_settings: UI settings tab
+is_test_build_flag_or_config_encoder_charset_or_settings_ui_groups_or_sidebar_anim_stage -> ui_groups_settings: UI groups settings
+aa_ui_formatters_or_weapon_groups_or_aa_runtime_flags -> aa_features: Anti-aim and other features
+aa_cvar_manager_or_crosshair_widget_or_rage_cvar_manager -> crosshair_widget: Crosshair widget
+aa_cvar_references_or_widgets_manager -> widgets_manager: Widgets manager (watermark, slowdown, logs, speclist, keylist)
+aa_cvar_keys_or_widget_instance_or_anim_helper_or_rage_cvar_proxy -> widget_instance: Widget instance / anim helper
+config_ui_elements -> update_stats_ui: Function to update stats UI
+clone_table -> copy_table: Function to duplicate table
+v28 -> src_table: Source table
+v29 -> dest_table: Destination table
+v30 -> k: Iterator key
+v31 -> v: Iterator value
+v36 -> t: Target table to check
+v37 -> val: Value to find
+v38 -> i: Loop index
+v39 -> t: Table to search
+v40 -> val: Value to find index of
+v41 -> i: Loop index
+v42 -> t: Table to deep copy
+v43 -> result: Resulting table
+v44 -> k: Iterator key
+v45 -> v: Iterator value
+v46 -> t: Table to slide
+v47 -> val: Value to push
+v48 -> max_size: Max table size constraint
+v49 -> t: Table target
+v50 -> path: Path array of keys
+v51 -> val: Value to place
+v53 -> i: Path traversal loop index
+v54 -> k: Path traversal key
+v55 -> t: Table to get random element from
+v56 -> idx: Randomly chosen index
+v57 -> t: Table to filter
+v58 -> result: Result filtered table
+v59 -> i: Filter counter
+v60 -> k: Original iterator index
+v62 -> v: Iterator value
+v63 -> t: Table to distribute
+v64 -> key: Target key
+v65 -> val_key: Target value key
+v66 -> result: Distributed table
+v67 -> k: Iterator key
+v68 -> v: Iterator value
+v70 -> x: X coordinate
+v71 -> y: Y coordinate
+v72 -> z: Z coordinate
+v73 -> val: Value to map
+v74 -> min1: Input range min
+v75 -> max1: Input range max
+v76 -> min2: Output range min
+v77 -> max2: Output range max
+v78 -> clamp: Boolean to clamp result
+v79 -> clamped: Clamped result
+v80 -> a: Lerp start
+v81 -> b: Lerp end
+v82 -> t: Lerp fraction
+v83 -> v1: Point A
+v84 -> v2: Point B
+v85 -> is_2d: Distance is 2D
+v86 -> dx: Delta X
+v87 -> dy: Delta Y
+v88 -> dz: Delta Z
+v89 -> v1: Vector array A
+v90 -> v2: Vector array B
+v91 -> is_2d: Distance is 2D
+v92 -> dx: Delta X
+v93 -> dy: Delta Y
+v94 -> dz: Delta Z
+v95 -> x: X size
+v96 -> y: Y size
+v97 -> z: Z size
+v98 -> val: Value to clamp
+v99 -> min_val: Min constraint
+v100 -> max_val: Max constraint
+v101 -> val: Value to cycle
+v102 -> max_val: Maximum threshold
+v103 -> rem: Modulo remainder
+v104 -> val: Value to round
+v105 -> val: Value to round
+v106 -> decimals: Decimal places
+v107 -> mult: Rounding multiplier
+v108 -> sum: Accumulated sum
+v109 -> count: Number of elements
+v110 -> k: Iterator index
+v111 -> v: Iterator value
+v113 -> t: Table of numbers
+v114 -> sum: Accumulated sum
+v115 -> count: Number of elements
+v116 -> i: Iterator index
+v118 -> val: Value
+v119 -> tolerance: Tolerance
+v120 -> src: Source vector
+v121 -> dst: Destination vector
+v122 -> dx: Delta X
+v123 -> dy: Delta Y
+v124 -> dz: Delta Z
+v125 -> pitch: Pitch
+v126 -> yaw: Yaw
+v127 -> roll: Roll
+v128 -> cp: Cosine Pitch
+v129 -> sp: Sine Pitch
+v130 -> cy: Cosine Yaw
+v131 -> sy: Sine Yaw
+v132 -> cr: Cosine Roll
+v133 -> sr: Sine Roll
+v134 -> dist: Distance
+v135 -> yaw: Yaw
+v136 -> x: X
+v137 -> y: Y
+v138 -> z: Z
+v139 -> yaw_rad: Yaw in Radians
+v140 -> a: Angle A
+v141 -> b: Angle B
+v142 -> pos: Position vector
+v143 -> vel: Velocity vector
+v144 -> ticks: Ticks to extrapolate
+v145 -> a: Vector A
+v146 -> b: Vector B
+v147 -> a: Vector A
+v148 -> b: Vector B
+v149 -> yaw: Yaw
+v150 -> pitch: Pitch
+v151 -> s: String to clean
+v152 -> s: String to limit
+v153 -> limit: Limit length
+v154 -> suffix: Suffix to append
+v155 -> res: Result chars
+v156 -> count: Count
+v157 -> c: Char
+v158 -> next_count: Next count
+v159 -> s: String to modify
+v160 -> insert_str: Insert string
+v161 -> pos: Position
+v162 -> s: String to get bytes from
+v164 -> a: A
+v165 -> b: B
+v171 -> cond: Condition
+v172 -> a: True branch
+v173 -> b: False branch
+v175 -> func: Function to xpcall
+v176 -> res: Result table
+v179 -> k: Key
+v180 -> t: Table
+v181 -> k: Key
+v182 -> v: Value
+v184 -> self: Self
+v193 -> self: Self
+v194 -> cb: Callback
+v195 -> idx: Index
+v199 -> self: Self
+v200 -> cb: Callback
+v201 -> idx: Index
+v202 -> k: Key
+v203 -> v: Value
+v204 -> self: Self
+v205 -> cb: Callback
+v206 -> add: Add flag
+v207 -> self: Self
+v208 -> self: Self
+v209 -> self: Self
+v210 -> self: Self
+v211 -> name: Event Name
+v212 -> event: Event object
+v213 -> res: Result
+v214 -> i: Iterator
+v215 -> cb_res: Callback result
+v218 -> event_data: Event Data
+v222 -> s: Saturation
+v223 -> v: Value
+v224 -> replacements: Replacements
+v225 -> args: Args
+v226 -> i: Iterator
+v231 -> save_db: Save DB callback
+v233 -> k: Key
+v234 -> val: Value
+v236 -> k: Key
+v237 -> v: Value
+v245 -> size: Size
+v246 -> buf: Buffer
+v247 -> val: Value
+v249 -> render_proxy: Render Proxy
+v251 -> font_name: Font Name
+v252 -> size: Font Size
+v253 -> flags: Flags
+v254 -> fallback: Fallback size
+v255 -> success: Success
+v256 -> res: Result font
+v260 -> style: Style
+v266 -> val: Value
+v267 -> scale: Scale value
+v268 -> alpha: Alpha value
+v269 -> alpha_stack: Alpha Stack
+v271 -> col: Color
+v272 -> override_alpha: Override alpha
+v273 -> apply_alpha: Apply alpha wrapper
+v274 -> dpi_t: DPI Target
+v276 -> is_scaled: Is Scaled
+v278 -> new_dpi: New DPI
+v281 -> dpi: DPI
+v284 -> alpha: Alpha
+v285 -> top: Top stack index
+v286 -> top: Top stack index
+v289 -> nil_val: Nil fallback
+v290 -> idx: Index
+v291 -> unscaled: Unscaled
+v292 -> font: Font
+v293 -> name: Name
+v294 -> size: Size
+v295 -> flags: Flags
+v296 -> font: Font
+v297 -> pos: Position
+v298 -> col: Color
+v299 -> flags: Flags
+v300 -> text: Text
+v301 -> measure: Measure flags
+v302 -> pos_a: Pos A
+v303 -> pos_b: Pos B
+v304 -> mult: Radius mult
+v305 -> radius: Radius
+v306 -> rounding: Rounding
+v307 -> i: Iterator
+v308 -> radius: Radius
+v309 -> pos_a: Pos A
+v310 -> pos_b: Pos B
+v311 -> col: Color
+v312 -> radius: Radius
+v313 -> offset_x: Offset X
+v314 -> offset_y: Offset Y
+v315 -> col: Color
+v316 -> points: Points
+v317 -> i: Iterator
+v318 -> pos_a: Pos A
+v319 -> pos_b: Pos B
+v320 -> col: Color
+v321 -> pos_a: Pos A
+v322 -> pos_b: Pos B
+v323 -> col: Color
+v324 -> rounding: Rounding
+v325 -> filled: Filled flag
+v326 -> i: Iterator
+v327 -> pos_a: Pos A
+v328 -> pos_b: Pos B
+v329 -> col: Color
+v330 -> thickness: Thickness
+v331 -> rounding: Rounding
+v332 -> filled: Filled flag
+v333 -> i: Iterator
+v334 -> pos_a: Pos A
+v335 -> pos_b: Pos B
+v336 -> col_tl: Color TL
+v337 -> col_tr: Color TR
+v338 -> col_bl: Color BL
+v339 -> col_br: Color BR
+v340 -> type: Gradient type
+v341 -> col_bl_real: Real BL Color
+v342 -> pos: Position
+v343 -> col: Color
+v344 -> radius: Radius
+v345 -> start_angle: Start Angle
+v346 -> end_angle: End Angle
+v347 -> pos: Position
+v348 -> col: Color
+v349 -> radius: Radius
+v350 -> start_angle: Start Angle
+v351 -> end_angle: End Angle
+v352 -> thickness: Thickness
+v353 -> pos: Position
+v354 -> col: Color
+v355 -> radius: Radius
+v356 -> start_angle: Start Angle
+v357 -> end_angle: End Angle
+v358 -> pos: Position
+v359 -> col: Color
+v360 -> radius: Radius
+v361 -> start_angle: Start Angle
+v362 -> end_angle: End Angle
+v363 -> thickness: Thickness
+v364 -> pos: Position
+v365 -> col_in: Color In
+v366 -> col_out: Color Out
+v367 -> radius: Radius
+v368 -> start_angle: Start Angle
+v369 -> end_angle: End Angle
+v370 -> thickness: Thickness
+v371 -> tex: Texture
+v372 -> pos: Position
+v373 -> size: Size
+v374 -> col: Color
+v375 -> mode: Mode
+v376 -> rounding: Rounding
+v377 -> pos_a: Pos A
+v378 -> pos_b: Pos B
+v379 -> intersect: Intersect
