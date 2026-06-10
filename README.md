@@ -8,4 +8,4 @@ In this project my main objective is learning how to integrate AI into my workfl
 
 By the way, I will still contribute myself to fix **errors made by AI**, optimisation and stuff.
 
-*Warning: since i don't have neverlose installed, this ai slop was not tested in real enviroment. gonna test it soon.
+*Warning: since i don't have neverlose installed, this ai slop was not tested in real enviroment. gonna test it soon. it MAY cause errors in current state.*
