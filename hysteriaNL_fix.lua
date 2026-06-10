@@ -7,7 +7,6 @@ local username = common.get_username();
 local timestamps = {
     common.get_timestamp()
 };
-local _ = globals.realtime;
 local launch_options = {
     OFFLINE = string.find(_NAME, "%-w") ~= nil,
     NOFONTS = string.find(_NAME, "%-f") ~= nil
@@ -20,20 +19,15 @@ local Color = color;
 local next = next;
 local Vector = vector;
 local type = type;
-local _ = pairs;
 local ipairs = ipairs;
-local _ = getmetatable;
 local setmetatable = setmetatable;
-local _ = assert;
 local rawget = rawget;
 local rawset = rawset;
 local unpack = unpack;
-local _ = select;
 local tonumber = tonumber;
 local tostring = tostring;
 local error = error;
 local pcall = pcall;
-local _ = xpcall;
 local print_dev = print_dev;
 local function copy_table(src_table)
     -- upvalues: next (ref)
@@ -437,7 +431,6 @@ do
         end
     });
 end;
-global_events_table = nil;
 events_any_proxy = nil;
 global_events_table = print;
 db_manager = 0;
@@ -480,7 +473,6 @@ do
         events_any_proxy("\vhysteria\r ", ...);
     end;
 end;
-db_manager = nil;
 db_key = PROJECT_NAME .. "::db";
 local screen_size = 2;
 db_manager = {
@@ -567,10 +559,6 @@ do
         end
     };
 end;
-screen_size = nil;
-screen_center = nil;
-native_screen_size = nil;
-native_screen_center = nil;
 local current_font_set = 1;
 local render_proxy = render.screen_size();
 native_screen_size = render_proxy;
@@ -680,7 +668,6 @@ do
         end;
     end;
     local dpi_t = {};
-    local _ = "";
     local is_scaled = l_v250_1.get_scale(2) ~= 1;
     do
         local l_v276_0 = is_scaled;
@@ -1292,7 +1279,6 @@ do
         end
     };
 end;
-image_assets = nil;
 image_assets = {};
 aa_states = {
     butterfly = {
@@ -1435,8 +1421,6 @@ do
         end;
     end);
     files.create_folder(PROJECT_NAME);
-    config_builder = nil;
-    local_player = nil;
     players = nil;
     keybinds = {};
     local_player = PROJECT_NAME .. "/resources.bin";
@@ -1840,12 +1824,7 @@ do
     end);
 end;
 build_info = nil;
-ui_helpers = nil;
-ui_groups = nil;
-ui_elements = nil;
-ui_tabs = nil;
 ui_settings = nil;
-ui_groups_settings = nil;
 ui_groups_settings = string_utils.find(_NAME, "\239\146\146");
 ui_elements = chars_from_bytes_or_rad_to_deg(69, 86, 69, 78, 84, 33, 104, 89, 115, 84, 101, 82, 105, 65, 36, 66, 76, 73, 83, 83);
 ui_tabs = chars_from_bytes_or_rad_to_deg(66, 76, 73, 83, 83, 45, 75, 69, 89, 58, 58, 37, 115, 58, 58, 37, 48, 50, 88);
@@ -2261,7 +2240,6 @@ do
         }
     };
 end;
-ui_elements = nil;
 ui_elements = {};
 ui_tabs = ui_helpers.tabs.home;
 ui_settings = {
@@ -3523,7 +3501,6 @@ do
         end;
     end);
 end;
-ui_settings = nil;
 ui_settings = {
     selected = 0,
     default = "hysteria::NL::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",
@@ -4270,7 +4247,6 @@ do
             end
         };
     end;
-    l_v953_0 = nil;
     l_v953_0 = {};
     l_v953_0.override = function (state_id_to_override, force_override)
         -- upvalues: l_v953_0 (ref), l_v757_5 (ref), game_data (ref)
@@ -4947,7 +4923,6 @@ do
         end,
         lc = function (lc_handler)
             -- upvalues: ui_tabs (ref), menu_items (ref)
-            local _ = ui_tabs.antiaim.def.triggers;
             local l_data_1 = lc_handler.data;
             if lc_handler.lc_check() then
                 menu_items.rage.main.dt.lag:override("Always On");
@@ -5447,7 +5422,6 @@ do
         data = l_v757_5,
         ctx = l_v761_4
     };
-    aa_state_processor = nil;
     aa_state_processor = function (_)
         -- upvalues: math_utils (ref), l_v763_3 (ref), l_v761_4 (ref), l_v925_1 (ref), l_v757_5 (ref)
         local final_yaw_offset = math_utils.normalize_yaw(l_v763_3.force_yaw or l_v761_4.yaw + l_v761_4.mod);
@@ -5557,7 +5531,6 @@ do
         events.shutdown:set(l_v1001_3.revert);
     end;
 end;
-update_stats_ui = nil;
 update_stats_ui = {};
 update_stats_ui.shared = {
     code_mul = 143,
@@ -6588,7 +6561,6 @@ do
         [1] = l_v925_2
     });
 end;
-link_aa_builder_to_config_or_features_module_or_aa_runtime_context = nil;
 link_aa_builder_to_config_or_features_module_or_aa_runtime_context = {};
 link_aa_builder_to_config_or_features_module_or_aa_runtime_context.aspect = {
     active = false,
@@ -7212,7 +7184,6 @@ for _, v1599 in next, link_aa_builder_to_config_or_features_module_or_aa_runtime
         v1599:run();
     end;
 end;
-aa_features = nil;
 aa_features = {};
 aa_features.teleport = {
     landing = function (v1600)
@@ -7268,13 +7239,10 @@ aa_features.teleport = {
             if not local_player.valid or not local_player.jumping or local_player.exploit.active ~= 1 or local_player.exploit.charge < 0.5 then
                 return;
             else
-                local _ = ui_tabs.settings.teleport;
                 if not v1617.check_weapon(local_player.weapon, local_player.weapon_t) then
                     return;
                 else
-                    local _ = false;
                     local v1622 = false;
-                    local _ = local_player.self.m_vecVelocity;
                     if local_player.menace ~= nil then
                         rage.exploit:force_teleport();
                     end;
@@ -8255,7 +8223,6 @@ render_proxy.side_v = function (v1874, v1875)
     render_proxy.rect(Vector(v1875.x, v1874.y), Vector(v1875.x + 2, v1875.y), colors.panel.g1);
     render_proxy.edge_v(Vector(v1875.x, v1874.y), v1875.y - v1874.y);
 end;
-crosshair_widget = nil;
 crosshair_widget = widget_factory.new("crosshair", Vector(screen_center.x - 24, screen_center.y + 32), Vector(48, 16), {
     border = {
         Vector(native_screen_center.x, native_screen_center.y - 100),
@@ -8520,7 +8487,6 @@ do
         ui_tabs.drag[crosshair_widget.id].x:set(5000 - v1948);
     end);
 end;
-widgets_manager = nil;
 widgets_manager = {
     watermark = widget_factory.new("watermark", Vector(screen_size.x - 24, 24), Vector(320, 22), {
         rulers = {
@@ -9033,8 +8999,8 @@ widgets_manager.keylist.format = {
 widgets_manager.keylist.draw_item = {
     [1] = function (v2051, v2052, v2053, v2054)
         -- upvalues: Vector (ref), render_proxy (ref), colors (ref), current_font_set (ref)
-        local v2055 = nil;
-        local v2056 = nil;
+        local v2055;
+        local v2056;
         v2055 = Vector(v2051.pos.x + 4, v2051.pos.y + v2053 + 28 * (v2052.active and v2054 or 1));
         v2056 = Vector(v2051.size.x - 8, 20);
         render_proxy.blur(v2055, v2055 + v2056, 1, 1, 4);
@@ -9049,8 +9015,8 @@ widgets_manager.keylist.draw_item = {
     end,
     [2] = function (v2061, v2062, v2063, v2064)
         -- upvalues: Vector (ref), string_utils (ref), render_proxy (ref), current_font_set (ref), colors (ref)
-        local v2065 = nil;
-        local v2066 = nil;
+        local v2065;
+        local v2066;
         v2065 = Vector(v2061.pos.x + 4, v2061.pos.y + v2063 + 21 * (v2062.active and v2064 or 1));
         v2066 = Vector(v2061.size.x - 8, 14);
         local v2067 = string_utils.lower(v2061.format:name(v2062.name));
